@@ -6,7 +6,7 @@
 
 ## Deskripsi Umum
 <br>Pada Source Code ini terdapat 2 Program, yaitu Program Transpose Matrix dan Program Bilangan yang habis dibagi 3,5 dan 7. 
-Program Transpose Matrix dibuat dengan cara mengubah/menukar for pada saat akan menampilkan output terakhir, sedangkan program kedua dibuat dengan system check menggunakan if else.
+Program Transpose Matrix dibuat dengan cara mengubah/menukar for dan cout "mat" pada saat akan menampilkan output terakhir, sedangkan program kedua dibuat dengan system check menggunakan if else.
 Dimana inputan nilai jika habis dibagi angka 3,5, dan 7 berarti angka tersebut benar, sedangkan jika tidak bisa dibagi dengan angka 3,5, dan 7 berarti bukan angka yang dimaksud.
 ## Source Code
 <br> 1. Program Transpose Matrix pada c++:
@@ -19,8 +19,8 @@ main(){
 	int i,j, baris, kolom;
   
     cout << "==================================================="<<endl;
-    cout << "	Program Transpoose Matrix "<<endl;
-    cout << "===================================================\n"<<endl;
+    cout << "	Transpose Matrix "<<endl;
+  	cout << "===================================================\n"<<endl;
 	cout << " Masukkan jumlah baris: ";
 	cin >> baris;
 	cout << " Masukkan jumlah kolom: ";
@@ -61,32 +61,42 @@ main(){
   using namespace std;
 
 main(){
-  	int k[1000];
-  	int a;
+  	int mat[100][100];
+  	int a, k, baris, kolom;
   	
   	cout << "==================================================="<<endl;
     cout << " Memastikan bilangan yang habis dibagi 3,5 dan 7 "<<endl;
   	cout << "===================================================\n"<<endl;
-  	cout << " Input nilai:  ";
-  	cin >> k[a];
+  	cout << " Masukkan jumlah baris: ";
+	cin >> baris;
+	cout << " Masukkan jumlah kolom: ";
+	cin >> kolom;
   	
-  	for(a = 0; a < 1000; a++){
-  			if(k[a]%3 == 0 && k[a]%5 == 0 && k[a]%7 == 0){
-  				cout << k[a] << " adalah nilai yang habis dibagi dengan 3, 5 dan 7"<<endl;
+  	for (a = 0; a < baris; a++)
+ 	for (k = 0; k < kolom; k++)
+ 	{
+ 	cout << " A["<<k+1<<"."<<a+1<<"]: ";
+ 	cin >> mat[a][k];
+ 	}
+ 	
+ 	for (a = 0; a < baris; a++){
+ 		for (k = 0; k < kolom; k++){
+ 			if(mat[a][k]%3 == 0 && mat[a][k]%5 == 0 && mat[a][k]%7 == 0){
+  				cout << mat[a][k] << " adalah nilai yang habis dibagi dengan 3, 5 dan 7"<<endl;
   				break;
 			  }
 			else{
-				cout << k[a] << " adalah nilai yang tidak habis dibagi dengan 3, 5 dan 7"<<endl;
+				cout << mat[a][k] << " adalah nilai yang tidak habis dibagi dengan 3, 5 dan 7"<<endl;
 				break;
 			}
-		  }
-  	
+	 }
+	}
+ 	cout << endl;
  	return 0;
 }
 ## Output
 <br> Berikut adalah output kedua program tersebut
 <br>1. Program Transpose Matrix
-![Screenshot 2022-12-26 145614](https://user-images.githubusercontent.com/119369695/209522936-01d72b44-0eb6-41a2-a04c-fd1dcc364afe.png)
+![Screenshot 2022-12-27 000308](https://user-images.githubusercontent.com/119369695/209570038-2987acd5-333d-4524-831b-e48b03758175.png)
 <br>2. Program Bilangan yang habis dibagi 3,5, dan 7
-![Screenshot 2022-12-26 151146](https://user-images.githubusercontent.com/119369695/209523559-cb3fe9a4-f72a-48b7-9938-476b31d44b05.png)
-![Screenshot 2022-12-26 151243](https://user-images.githubusercontent.com/119369695/209523633-40e78c7e-27b1-4957-9b3b-5f4e0e107d0a.png)
+![Screenshot 2022-12-26 235615](https://user-images.githubusercontent.com/119369695/209569615-92791bf1-a8dc-4d36-a277-f319bab15842.png)
